@@ -1,0 +1,433 @@
+/* ul */
+/* xl */
+/* lg */
+/* md */
+/* sm */
+/* xs */
+/* xx */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+.container {
+    max-width: 1960px;
+    margin: auto;
+    padding: 20px;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+/* ul */
+/* xl */
+/* lg */
+/* md */
+/* sm */
+/* xs */
+/* xx */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+}
+
+.navbar__logo h2 {
+    font-family: "Roboto Slab", serif;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+section {
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.75);
+    animation: main-animation 1s ease;
+}
+
+@media (max-width: 767.8px) {
+    section {
+        transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.65);
+        animation: none;
+    }
+}
+
+@media (max-width: 575.8px) {
+    section {
+        transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.55);
+    }
+}
+
+section:hover {
+    transform: perspective(1300px) rotateY(20deg) translateZ(350px) scale(0.75);
+    cursor: pointer;
+}
+
+@media (max-width: 767.8px) {
+    section:hover {
+        transform: perspective(1300px) rotateY(20deg) translateZ(350px) scale(0.65);
+    }
+}
+
+@media (max-width: 575.8px) {
+    section:hover {
+        transform: perspective(1300px) rotateY(20deg) translateZ(350px) scale(0.55);
+    }
+}
+
+section:hover .project__wrapper {
+    animation: wrapper 0.6s ease;
+    opacity: 0.8;
+}
+
+section:hover .project__content {
+    animation: content 0.6s forwards ease;
+    opacity: 1;
+}
+
+section .project {
+    position: relative;
+}
+
+section .project img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center;
+    object-position: center;
+}
+
+section .project__content {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    gap: 20px;
+}
+
+section .project__content-title h3 {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 991.8px) {
+    section .project__content-title h3 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 767.8px) {
+    section .project__content-title h3 {
+        font-size: 1.75em;
+    }
+}
+
+section .project__content-description ul li {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+    list-style: circle;
+}
+
+@media (max-width: 991.8px) {
+    section .project__content-description ul li {
+        font-size: 1.25em;
+    }
+}
+
+@media (max-width: 767.8px) {
+    section .project__content-description ul li {
+        font-size: 1em;
+    }
+}
+
+section .project__content-action {
+    display: flex;
+    gap: 20px;
+}
+
+section .project__content-action .btn {
+    padding: 0.6rem 1.6rem;
+    background-color: #1179e7;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+section .project__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99.5%;
+    background-image: linear-gradient(76.3deg, rgb(44, 62, 78) 12.6%, rgb(69, 103, 131) 82.8%);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+@keyframes main-animation {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.75);
+    }
+}
+
+@keyframes wrapper {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.8;
+    }
+}
+
+@keyframes content {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+body {
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+.container .content {
+    display: grid;
+    width: 100%;
+    height: calc(100vh - 90px);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas: "projects projects links" "projects projects links" "projects projects links";
+}
+
+@media (max-width: 991.8px) {
+    .container .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: "projects" "projects" "links";
+    }
+}
+
+.container .content__projects {
+    grid-area: projects;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .content__projects .wrapper {
+    position: relative;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.container .content__projects .wrapper .shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: 0.5s;
+    background: white;
+}
+
+.container .content__projects .wrapper .shadow.one {
+    z-index: -1;
+    opacity: 0.15;
+    transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.75);
+    animation: shadow-one 0.6s ease-out;
+}
+
+@media (max-width: 767.8px) {
+    .container .content__projects .wrapper .shadow.one {
+        transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.65);
+        animation: none;
+    }
+}
+
+@media (max-width: 575.8px) {
+    .container .content__projects .wrapper .shadow.one {
+        transform: perspective(1300px) rotateY(20deg) translateZ(250px) scale(0.55);
+    }
+}
+
+.container .content__projects .wrapper .shadow.one.active {
+    transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.75);
+}
+
+@media (max-width: 767.8px) {
+    .container .content__projects .wrapper .shadow.one.active {
+        transform: perspective(1300px) rotateY(20deg) translateZ(245px) scale(0.65);
+    }
+}
+
+@media (max-width: 575.8px) {
+    .container .content__projects .wrapper .shadow.one.active {
+        transform: perspective(1300px) rotateY(20deg) translateZ(265px) scale(0.55);
+    }
+}
+
+.container .content__projects .wrapper .shadow.two {
+    z-index: -2;
+    opacity: 0.15;
+    transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.75);
+    animation: shadow-two 0.6s ease-out;
+}
+
+@media (max-width: 767.8px) {
+    .container .content__projects .wrapper .shadow.two {
+        transform: perspective(1300px) rotateY(20deg) translateZ(150px) scale(0.65);
+        animation: none;
+    }
+}
+
+@media (max-width: 575.8px) {
+    .container .content__projects .wrapper .shadow.two {
+        transform: perspective(1300px) rotateY(20deg) translateZ(180px) scale(0.55);
+    }
+}
+
+.container .content__links {
+    grid-area: links;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container .content__links ul {
+    list-style: none;
+}
+
+.container .content__links a {
+    text-decoration: none;
+    color: white;
+    padding: 0.7rem 0;
+    font-size: 1em;
+    display: inline-block;
+    font-weight: 300;
+    font-family: "Roboto Slab", serif;
+    text-transform: uppercase;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: appear 0.5s forwards ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes shadow-one {
+    0% {
+        transform: translate(0);
+    }
+
+    5% {
+        transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.75);
+    }
+
+    100% {
+        transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.75);
+    }
+}
+
+@keyframes shadow-two {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.75);
+    }
+
+    100% {
+        transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.75);
+    }
+}
