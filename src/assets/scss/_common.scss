@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+body {
+  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+.container {
+  @extend %container;
+
+  .content {
+    display: grid;
+    width: 100%;
+    height: calc(100vh - 90px);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas:
+      "projects projects links"
+      "projects projects links"
+      "projects projects links";
+    
+    @include lg {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-areas: "projects" "projects"
+      "links";
+    }
+
+    &__projects {
+      grid-area: projects;
+      transform-style: preserve-3d;
+      transform-origin: left;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .wrapper {
+        position: relative;
+        width: 100%;
+        transition: 0.5s;
+
+        .shadow {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          transform-style: preserve-3d;
+          transform-origin: left;
+          transition: 0.5s;
+          background: white;
+
+          &.one {
+            z-index: -1;
+            opacity: 0.15;
+            transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.75);
+            animation: shadow-one 0.6s ease-out;
+            @include md {
+              transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.65);
+              animation: none;
+            }
+            @include sm {
+              transform: perspective(1300px) rotateY(20deg) translateZ(250px) scale(0.55);
+            }
+            &.active {
+              transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.75);
+              @include md {
+                transform: perspective(1300px) rotateY(20deg) translateZ(245px) scale(0.65);
+              }
+              @include sm {
+                transform: perspective(1300px) rotateY(20deg) translateZ(265px) scale(0.55);
+              }
+            }
+          }
+
+          &.two {
+            z-index: -2;
+            opacity: 0.15;
+            transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.75);
+            animation: shadow-two 0.6s ease-out;
+            @include md {
+              transform: perspective(1300px) rotateY(20deg) translateZ(150px) scale(0.65);
+              animation: none;
+            }
+            @include sm {
+              transform: perspective(1300px) rotateY(20deg) translateZ(180px) scale(0.55);
+            }
+          }
+        }
+      }
+    }
+
+    &__links {
+      grid-area: links;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        padding: 0.7rem 0;
+        font-size: 1em;
+        display: inline-block;
+        font-weight: 300;
+        font-family: $font-header;
+        text-transform: uppercase;
+        transition: 0.3s;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: appear 0.5s forwards ease;
+      }
+    }
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes shadow-one {
+  0% {
+    transform: translate(0);
+  }
+  5% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.75);
+  }
+  100% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.75);
+  }
+}
+
+@keyframes shadow-two {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.75);
+  }
+  100% {
+    transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.75);
+  }
+}

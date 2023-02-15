@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="container">
+  {{> navbar}}
+  <div class="content">
+    <div class="content__projects">
+      <div class="wrapper">
+        {{> autoservice}}
+        {{> library}}
+        <div class="shadow one"></div>
+        <div class="shadow two"></div>
+      </div>
+    </div>
+    <div class="content__links">
+      <ul>
+          <li><a class="content__links-item" data-link='autoservice' href="#">Autoservice</a></li>
+          <li><a class="content__links-item" data-link='library' href="#">Library</a></li>
+        </ul>
+    </div>
+  </div>
+</div>

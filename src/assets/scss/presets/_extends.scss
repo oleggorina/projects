@@ -1,0 +1,9 @@
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+%container {
+  max-width: 1960px;
+  margin: auto;
+  padding: $gap;
+}
