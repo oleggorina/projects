@@ -92,36 +92,37 @@ section {
     transform-style: preserve-3d;
     transition: 0.5s;
     transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.75);
-    animation: main-animation 1s ease;
+    animation: main-animationLG 1s ease;
 }
 
 @media (max-width: 767.8px) {
     section {
         transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.65);
-        animation: none;
+        animation: main-animationMD 1s ease;
     }
 }
 
 @media (max-width: 575.8px) {
     section {
-        transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.55);
+        transform: perspective(1300px) rotateY(20deg) translateZ(150px) scale(0.65);
+        animation: main-animationSM 1s ease;
     }
 }
 
 section:hover {
-    transform: perspective(1300px) rotateY(20deg) translateZ(350px) scale(0.75);
+    transform: perspective(1300px) rotateY(20deg) translateZ(320px) scale(0.75);
     cursor: pointer;
 }
 
 @media (max-width: 767.8px) {
     section:hover {
-        transform: perspective(1300px) rotateY(20deg) translateZ(350px) scale(0.65);
+        transform: perspective(1300px) rotateY(20deg) translateZ(320px) scale(0.65);
     }
 }
 
 @media (max-width: 575.8px) {
     section:hover {
-        transform: perspective(1300px) rotateY(20deg) translateZ(350px) scale(0.55);
+        transform: perspective(1300px) rotateY(20deg) translateZ(160px) scale(0.65);
     }
 }
 
@@ -182,6 +183,12 @@ section .project__content-title h3 {
     }
 }
 
+@media (max-width: 575.8px) {
+    section .project__content-title h3 {
+        font-size: 1em;
+    }
+}
+
 section .project__content-description ul li {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
@@ -201,9 +208,23 @@ section .project__content-description ul li {
     }
 }
 
+@media (max-width: 575.8px) {
+    section .project__content-description ul li {
+        display: none;
+    }
+}
+
 section .project__content-action {
     display: flex;
     gap: 20px;
+}
+
+@media (max-width: 575.8px) {
+    section .project__content-action {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
 }
 
 section .project__content-action .btn {
@@ -215,6 +236,12 @@ section .project__content-action .btn {
     text-transform: uppercase;
     cursor: pointer;
     text-decoration: none;
+}
+
+@media (max-width: 575.8px) {
+    section .project__content-action .btn {
+        padding: 0.2rem 0.6rem;
+    }
 }
 
 section .project__wrapper {
@@ -229,13 +256,33 @@ section .project__wrapper {
     opacity: 0;
 }
 
-@keyframes main-animation {
+@keyframes main-animationLG {
     from {
         transform: translate(0);
     }
 
     to {
         transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.75);
+    }
+}
+
+@keyframes main-animationMD {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.65);
+    }
+}
+
+@keyframes main-animationSM {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: perspective(1300px) rotateY(20deg) translateZ(150px) scale(0.65);
     }
 }
 
@@ -316,20 +363,19 @@ body {
 .container .content__projects .wrapper .shadow.one {
     z-index: -1;
     opacity: 0.15;
-    transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.75);
+    transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.75);
     animation: shadow-one 0.6s ease-out;
 }
 
 @media (max-width: 767.8px) {
     .container .content__projects .wrapper .shadow.one {
         transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.65);
-        animation: none;
     }
 }
 
 @media (max-width: 575.8px) {
     .container .content__projects .wrapper .shadow.one {
-        transform: perspective(1300px) rotateY(20deg) translateZ(250px) scale(0.55);
+        transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.65);
     }
 }
 
@@ -339,13 +385,13 @@ body {
 
 @media (max-width: 767.8px) {
     .container .content__projects .wrapper .shadow.one.active {
-        transform: perspective(1300px) rotateY(20deg) translateZ(245px) scale(0.65);
+        transform: perspective(1300px) rotateY(20deg) translateZ(240px) scale(0.65);
     }
 }
 
 @media (max-width: 575.8px) {
     .container .content__projects .wrapper .shadow.one.active {
-        transform: perspective(1300px) rotateY(20deg) translateZ(265px) scale(0.55);
+        transform: perspective(1300px) rotateY(20deg) translateZ(130px) scale(0.65);
     }
 }
 
@@ -365,7 +411,7 @@ body {
 
 @media (max-width: 575.8px) {
     .container .content__projects .wrapper .shadow.two {
-        transform: perspective(1300px) rotateY(20deg) translateZ(180px) scale(0.55);
+        transform: perspective(1300px) rotateY(20deg) translateZ(80px) scale(0.65);
     }
 }
 
