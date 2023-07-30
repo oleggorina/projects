@@ -57,22 +57,21 @@ body {
           &.one {
             z-index: -1;
             opacity: 0.15;
-            transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.75);
+            transform: perspective(1300px) rotateY(20deg) translateZ(220px) scale(0.75);
             animation: shadow-one 0.6s ease-out;
             @include md {
               transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.65);
-              animation: none;
             }
             @include sm {
-              transform: perspective(1300px) rotateY(20deg) translateZ(250px) scale(0.55);
+              transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.65);
             }
             &.active {
               transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.75);
               @include md {
-                transform: perspective(1300px) rotateY(20deg) translateZ(245px) scale(0.65);
+                transform: perspective(1300px) rotateY(20deg) translateZ(240px) scale(0.65);
               }
               @include sm {
-                transform: perspective(1300px) rotateY(20deg) translateZ(265px) scale(0.55);
+                transform: perspective(1300px) rotateY(20deg) translateZ(130px) scale(0.65);
               }
             }
           }
@@ -87,7 +86,7 @@ body {
               animation: none;
             }
             @include sm {
-              transform: perspective(1300px) rotateY(20deg) translateZ(180px) scale(0.55);
+              transform: perspective(1300px) rotateY(20deg) translateZ(80px) scale(0.65);
             }
           }
         }

@@ -6,22 +6,23 @@ section {
   transform-style: preserve-3d;
   transition: 0.5s;
   transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.75);
-  animation: main-animation 1s ease;
+  animation: main-animationLG 1s ease;
   @include md {
     transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.65);
-    animation: none;
+    animation: main-animationMD 1s ease;
   }
   @include sm {
-    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.55);
+    transform: perspective(1300px) rotateY(20deg) translateZ(150px) scale(0.65);
+    animation: main-animationSM 1s ease;
   }
   &:hover {
-    transform: perspective(1300px) rotateY(20deg) translateZ(350px) scale(0.75);
+    transform: perspective(1300px) rotateY(20deg) translateZ(320px) scale(0.75);
     cursor: pointer;
     @include md {
-      transform: perspective(1300px) rotateY(20deg) translateZ(350px) scale(0.65);
+      transform: perspective(1300px) rotateY(20deg) translateZ(320px) scale(0.65);
     }
     @include sm {
-      transform: perspective(1300px) rotateY(20deg) translateZ(350px) scale(0.55);
+      transform: perspective(1300px) rotateY(20deg) translateZ(160px) scale(0.65);
     }
 
     .project {
@@ -71,6 +72,9 @@ section {
           @include md {
             font-size: 1.75em;
           }
+          @include sm {
+            font-size: 1em;
+          }
         }
       }
       &-description {
@@ -86,12 +90,20 @@ section {
             @include md {
               font-size: 1em;
             }
+            @include sm {
+              display: none;
+            }
           }
         }
       }
       &-action {
         display: flex;
         gap: $gap;
+        @include sm {
+          flex-direction: column;
+          gap: 5px;
+          align-items: center;
+        }
         .btn {
           padding: 0.6rem 1.6rem;
           background-color: $color-accent;
@@ -101,6 +113,9 @@ section {
           text-transform: uppercase;
           cursor: pointer;
           text-decoration: none;
+          @include sm {
+            padding: 0.2rem 0.6rem;
+          }
         }
       }
     }
@@ -121,13 +136,33 @@ section {
   }
 }
 
-@keyframes main-animation {
+@keyframes main-animationLG {
   from {
     transform: translate(0);
   }
 
   to {
     transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.75);
+  }
+}
+
+@keyframes main-animationMD {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.65);
+  }
+}
+
+@keyframes main-animationSM {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: perspective(1300px) rotateY(20deg) translateZ(150px) scale(0.65);
   }
 }
 
