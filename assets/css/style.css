@@ -184,8 +184,8 @@ section .project__content-title h3 {
 }
 
 @media (max-width: 575.8px) {
-    section .project__content-title h3 {
-        font-size: 1em;
+    section .project__content-title {
+        display: none;
     }
 }
 
@@ -209,7 +209,7 @@ section .project__content-description ul li {
 }
 
 @media (max-width: 575.8px) {
-    section .project__content-description ul li {
+    section .project__content-description {
         display: none;
     }
 }
@@ -222,8 +222,9 @@ section .project__content-action {
 @media (max-width: 575.8px) {
     section .project__content-action {
         flex-direction: column;
-        gap: 5px;
         align-items: center;
+        height: 100%;
+        justify-content: center;
     }
 }
 
