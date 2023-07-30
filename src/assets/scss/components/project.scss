@@ -72,9 +72,9 @@ section {
           @include md {
             font-size: 1.75em;
           }
-          @include sm {
-            font-size: 1em;
-          }
+        }
+        @include sm {
+          display: none;
         }
       }
       &-description {
@@ -90,10 +90,10 @@ section {
             @include md {
               font-size: 1em;
             }
-            @include sm {
-              display: none;
-            }
           }
+        }
+        @include sm {
+          display: none;
         }
       }
       &-action {
@@ -101,8 +101,10 @@ section {
         gap: $gap;
         @include sm {
           flex-direction: column;
-          gap: 5px;
+          // gap: 5px;
           align-items: center;
+          height: 100%;
+          justify-content: center;
         }
         .btn {
           padding: 0.6rem 1.6rem;
