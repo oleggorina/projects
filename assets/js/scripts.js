@@ -23,10 +23,17 @@ function replaceBg(id) {
 
 function changeBg() {
   links.forEach(link => {
-    link.addEventListener('mouseenter', e => {
+    link.addEventListener('click', e => {
       e.preventDefault();
-      replaceBg(e.target.dataset.link);
       
+      links.forEach(otherLink => {
+        if (otherLink !== link) {
+          otherLink.classList.remove('active');
+        }
+      })
+      link.classList.toggle('active')
+
+      replaceBg(e.target.dataset.link);
     })
   })
 

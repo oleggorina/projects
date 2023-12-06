@@ -69,21 +69,6 @@ input {
 /* sm */
 /* xs */
 /* xx */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    width: 100%;
-}
-
-.navbar__logo h2 {
-    font-family: "Roboto Slab", serif;
-    font-size: 1.5em;
-    font-weight: 500;
-    color: #ffffff;
-}
-
 section {
     position: relative;
     z-index: 5;
@@ -230,10 +215,10 @@ section .project__content-action {
 
 section .project__content-action .btn {
     padding: 0.6rem 1.6rem;
-    background-color: #1179e7;
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgb(255, 209, 67) 0%, rgb(255, 145, 83) 90%);
     border: none;
     border-radius: 25px;
-    color: white;
+    color: black;
     text-transform: uppercase;
     cursor: pointer;
     text-decoration: none;
@@ -319,18 +304,24 @@ body {
 .container .content {
     display: grid;
     width: 100%;
-    height: calc(100vh - 90px);
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 20px 20px;
-    grid-template-areas: "projects projects links" "projects projects links" "projects projects links";
+    height: calc(100vh - 40px);
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-areas: "projects links";
 }
 
 @media (max-width: 991.8px) {
     .container .content {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-areas: "projects" "projects" "links";
+        grid-template-rows: 1fr 0.5fr;
+        grid-template-areas: "projects" "links";
+    }
+}
+
+@media (max-width: 767.8px) {
+    .container .content {
+        grid-template-rows: 0.5fr 0.25fr;
     }
 }
 
@@ -421,9 +412,7 @@ body {
 
 .container .content__links {
     grid-area: links;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    align-self: center;
     text-align: center;
 }
 
@@ -444,6 +433,10 @@ body {
     opacity: 0;
     transform: translateY(10px);
     animation: appear 0.5s forwards ease;
+}
+
+.container .content__links a.active {
+    color: rgb(255, 145, 83);
 }
 
 @keyframes appear {
